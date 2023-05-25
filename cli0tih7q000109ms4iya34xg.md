@@ -82,7 +82,7 @@ To use Kubernetes locally, you can use the 2 most common options available.
 
 ### Installing Node.js and Typescript
 
-In this blog, we will make the servers using Node.js and Typescript.
+In this blog, we will make the servers using Node.js and Typescript. You will most probably not require Node.js installed locally if you just want to test my code on kubernetes.
 
 ### Let's start!
 
@@ -96,7 +96,7 @@ As this blog focuses on deploying a service rather than creating one, you can di
 git clone -b blog_start https://github.com/SohamRatnaparkhi/twitter-backend.git
 ```
 
-The folder structure will be -
+The folder structure should be -
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1684876474617/e7f55914-6224-40f3-a840-3bedc005d790.png align="center")
 
@@ -301,6 +301,12 @@ In the root directory of the project, create a folder named kubernetes.
     You can check it by going to \`[http://localhost:6001/](http://localhost:6001/)\`
     
     You will get output as `Hello World! from makePosts at port 6001`
+    
+* #### What next?
+    
+    Now, you can auto-scale these services. You just need to add a service to autoscale a particular service say makePosts.
+    
+    To do so, add a file \`
     
 
 Thank you! Do comment down your learnings or doubts below in the comments section!
