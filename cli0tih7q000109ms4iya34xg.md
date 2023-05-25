@@ -1,5 +1,6 @@
 ---
 title: "Beginner guide to deploying Micro-services on Kubernetes"
+seoTitle: "Deploying to k8s made easy!"
 datePublished: Tue May 23 2023 21:58:19 GMT+0000 (Coordinated Universal Time)
 cuid: cli0tih7q000109ms4iya34xg
 slug: beginner-guide-to-deploying-micro-services-on-kubernetes
@@ -36,7 +37,7 @@ It provides a robust infrastructure for running microservices by automating task
 4. Resource Optimization: Kubernetes optimizes resource allocation, allowing efficient utilization of computing resources, which results in cost savings.
     
 
-An important step in deploying a service to Kubernetes is dockerization.
+An essential step in deploying a service to Kubernetes is dockerization.
 
 ## Docker
 
@@ -167,6 +168,25 @@ Now stop these by hitting `cntr+c` or `cmd+c`
 
 #### Step 3: Deploying on Kubernetes and creating services
 
+##### **Intro to k8s**
+
+Now I will introduce you to some core concepts in kubernetes(k8s).
+
+In Kubernetes, "cluster," "pod," "deployment," and "service" are fundamental concepts that are used to manage and run applications in a distributed system. Let's explore each of these terms:
+
+1. Cluster: A cluster is the foundation of a Kubernetes environment. It consists of a set of physical or virtual machines, called nodes, that work together to run containerized applications. The cluster is responsible for managing the scheduling, scaling, and monitoring of containers across the nodes.
+    
+2. Pod: A pod is the smallest and most basic unit of deployment in Kubernetes. It represents a single instance of a running process in the cluster. A pod can encapsulate one or more tightly coupled containers and share the same resources, such as network and storage.
+    
+3. Deployment: A deployment is a Kubernetes resource that defines the desired state of a set of pods. It provides a declarative way to manage the lifecycle of pod replicas, enabling easy scaling, rolling updates, and rollbacks. Deployments allow you to specify the number of replicas to run, the container images to use, and other configuration parameters.
+    
+4. Service: A service is an abstract representation of pods that provide the same functionality. It acts as a stable network endpoint that enables communication between different parts of an application within the cluster or with external clients. Services have an associated IP address and port, allowing other pods or external systems to access the pods behind the service.
+    
+
+To summarize, a cluster is an overarching infrastructure that hosts your applications, while pods represent the individual instances of your application processes. Deployments manage the lifecycle and scaling of pods, and services provide a consistent way to access and communicate with pods in the cluster. These concepts form the building blocks of managing and orchestrating containerized applications in Kubernetes.
+
+##### **Finally, Deploying to k8s**
+
 First, we need to create a cluster. For this, you can use `minikube start` if you installed minikube or go to docker decktop settings, select kubernetes, and enable kubernetes. Then click on apply and restart.
 
 In the root directory of the project, create a folder named kubernetes.
@@ -283,4 +303,4 @@ In the root directory of the project, create a folder named kubernetes.
     You will get output as `Hello World! from makePosts at port 6001`
     
 
-Thank you!
+Thank you! Do comment down your learnings or doubts below in the comments section!
