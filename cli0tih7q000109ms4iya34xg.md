@@ -304,7 +304,7 @@ In the root directory of the project, create a folder named kubernetes.
     
 * #### What next?
     
-    Now, you can auto-scale these services. You just need to add a service to autoscale a particular service say makePosts.
+    Now, you can auto-scale these services. You just need to add a yaml to autoscale a particular service say makePosts.
     
     To do so, create a file `kubernetes\makepost-autoscale.yaml` and add :-
     
