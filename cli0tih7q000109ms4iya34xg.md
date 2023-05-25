@@ -306,7 +306,26 @@ In the root directory of the project, create a folder named kubernetes.
     
     Now, you can auto-scale these services. You just need to add a service to autoscale a particular service say makePosts.
     
-    To do so, add a file \`
+    To do so, create a file `kubernetes\makepost-autoscale.yaml` and add :-
     
 
-Thank you! Do comment down your learnings or doubts below in the comments section!
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: makepost-autoscaler
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: makepost-deployment
+  minReplicas: 2
+  maxReplicas: 5
+  # targetCPUUtilizationPercentage: 50
+```
+
+Now applying this service using `kubectl apply -f kubernetes/makepost-autoscale.yaml` will auto-scale the makepost-deployment from 2 to 5 replicas based on the load.
+
+That's a wrap! Do comment down your learnings or doubts below in the comments section.
+
+Thank you!
